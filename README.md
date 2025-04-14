@@ -5,6 +5,10 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=lulietlyan" alt="lulietlyan" /></a> </p>
 
+- 🔭 I’m currently working on **Sun Yat-Sen University**
+
+- 🌱 I’m currently learning **HPC, LLM, Golang**
+
 - 📫 How to reach me **lulietlyan@gmail.com**
 
 <h3 align="left">Connect with me:</h3>
