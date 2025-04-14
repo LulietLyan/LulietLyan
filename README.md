@@ -1,5 +1,5 @@
-<h1 align="center">Hi 👋, I'm LulietLyan</h1>
-<h3 align="center">A passionate developer from China</h3>
+<h1 align="center">LulietLyan</h1>
+<h3 align="center">A passionate developer from China, Sun Yat-Sen University</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=lulietlyan&label=Profile%20views&color=21907b&style=for-the-badge" alt="lulietlyan" /> </p>
 
