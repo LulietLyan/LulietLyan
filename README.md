@@ -23,3 +23,5 @@
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=lulietlyan&theme=tokyonight&hide=python,shell" /></p>
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api?username=lulietlyan&show_icons=true&theme=tokyonight&line_height=40&v=5" /></p>
+
+<p><img align="center" src="/github-metrics.svg" alt="Metrics" width="800" /></p>
