@@ -59,7 +59,5 @@ jobs:
           plugin_licenses_setup: bash -c '[[ -f package.json ]] && npm ci || true'
           plugin_licenses_legal: no
           plugin_licenses_ratio: yes
-          plugin_topics: yes
-          plugin_topics_limit: 0
           plugin_topics_mode: icons
 
