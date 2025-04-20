@@ -59,5 +59,12 @@ jobs:
           plugin_licenses_setup: bash -c '[[ -f package.json ]] && npm ci || true'
           plugin_licenses_legal: no
           plugin_licenses_ratio: yes
-          plugin_topics_mode: icons
-
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.skyline.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_skyline: yes
+          plugin_skyline_year: 2020
+          plugin_skyline_frames: 6
+          plugin_skyline_quality: 1
