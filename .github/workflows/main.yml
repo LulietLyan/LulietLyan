@@ -66,8 +66,8 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          filename: metrics.plugin.skyline.svg
           token: ${{ secrets.METRICS }}
+          user: LulietLyan
           base: ""
           plugin_skyline: yes
           plugin_skyline_year: 2025
