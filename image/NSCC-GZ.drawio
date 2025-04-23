@@ -1,10 +1,10 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" version="26.2.14">
   <diagram name="Page-1" id="xD8-93mIbkzqHhIZw4r1">
-    <mxGraphModel dx="686" dy="378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="455" pageHeight="70" math="0" shadow="0">
+    <mxGraphModel dx="568" dy="313" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="455" pageHeight="70" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="VmvaCrHUOqGT1E6khJho-1" value="&lt;font style=&quot;font-size: 35px; color: rgb(18, 99, 162);&quot;&gt;&lt;b style=&quot;&quot;&gt;国家超级计算广州中心&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 13px; color: rgb(18, 99, 162);&quot;&gt;&lt;b style=&quot;&quot;&gt;NATIONAL SUPERCOMPUTER CENTER IN GUANGZHOU&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+        <mxCell id="VmvaCrHUOqGT1E6khJho-1" value="&lt;font style=&quot;font-size: 35px; color: rgb(18, 99, 162);&quot;&gt;&lt;b style=&quot;&quot;&gt;国家超级计算广州中心&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(18, 99, 162); font-size: 12.8px;&quot;&gt;&lt;b style=&quot;&quot;&gt;NATIONAL SUPERCOMPUTER CENTER IN GUANGZHOU&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="83" width="370" height="70" as="geometry" />
         </mxCell>
         <mxCell id="VmvaCrHUOqGT1E6khJho-2" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;strokeColor=none;fillColor=#4F8D3A;gradientColor=#D5E8D4;" parent="1" vertex="1">
