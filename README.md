@@ -9,7 +9,8 @@
 <p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=lulietlyan&theme=buddhism" alt="lulietlyan" /></a> </p>
 
 <p align="center"> 
-<a href="https://github.com/ryo-ma/github-profile-trophy"><img src="./image/SYSU.png" height=50pt alt="lulietlyan" /></a>
+<a href="https://github.com/LulietLyan"><img src="./image/SYSU.png" height=50pt alt="lulietlyan" /></a>
+<a href="https://github.com/LulietLyan"><img src="./image/NSCC-GZ.png" height=50pt alt="lulietlyan" /></a>
  </p>
 
 - 🔭 I’m currently working on **Sun Yat-Sen University**
