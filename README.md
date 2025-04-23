@@ -10,7 +10,7 @@
 
 <p align="center"> 
 <a href="https://github.com/LulietLyan"><img src="./image/SYSU.png" height=50pt alt="lulietlyan" /></a>
-<a href="https://github.com/LulietLyan"><img src="./image/NSCC-GZ.png" height=50pt alt="lulietlyan" /></a>
+<a href="https://github.com/LulietLyan"><img src="./image/NSCC-GZ.svg" height=50pt alt="lulietlyan" /></a>
  </p>
 
 - 🔭 I’m currently working on **Sun Yat-Sen University**
