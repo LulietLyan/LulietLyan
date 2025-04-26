@@ -82,3 +82,8 @@ jobs:
             ./assets/github-contribution-grid-snake.gif
             ./assets/github-contribution-grid-snake.svg
             ./assets/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      - name: Push to GitHub
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Generate Github contribution heatmap animation'
