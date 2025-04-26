@@ -2,16 +2,13 @@
 <h3 align="center">A passionate developer from China, Sun Yat-Sen University</h3>
 
 <p align="center"> 
-
-<img src="https://img.shields.io/github/followers/LulietLyan?label=Followers&style=for-the-badge&color=purple"alt="github follow" >
+<img src="https://img.shields.io/github/followers/LulietLyan?label=Followers&style=for-the-badge&color=purple"
+alt="github follow"/>
 <img src="https://komarev.com/ghpvc/?username=lulietlyan&label=Profile%20views&color=21907b&style=for-the-badge" alt="lulietlyan" /> 
-
 </p>
 
 <p align="center"> 
-
 <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=lulietlyan&theme=buddhism&no-bg=true" alt="lulietlyan" /></a> 
-
 </p>
 
 <p align="center"> 
@@ -40,16 +37,13 @@
 <table align="center">
 <tr border="none">
 <td width="50%" align="center">
-  
   <img  align="center"  src="https://github-readme-stats.vercel.app/api?username=LulietLyan&theme=radical&show_icons=true&count_private=true" />
   <br></br>
   <img  title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="Mark streak" src="https://github-readme-streak-stats.herokuapp.com/?user=LulietLyan&theme=radical&hide_border=false" /> 
 </td>
 
 <td width="50%" align="center">
-
   <img  align="center"  src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=LulietLyan&theme=radical&hide_border=false&no-bg=true&no-frame=true&langs_count=10"/>
-  
   </td>
 </tr>
 </table>
