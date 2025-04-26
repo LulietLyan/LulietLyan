@@ -7,13 +7,12 @@ on:
   workflow_dispatch:
   push: { branches: ["master", "main"] }
 jobs:
-  bulid:
+  github-metrics:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: github-metrics
-        uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@latest
         with:
           # Your GitHub token
           # The following scopes are required:
@@ -73,17 +72,12 @@ jobs:
           # plugin_skyline_frames: 6
           # plugin_skyline_quality: 1
 
-      - name: generate-snake
-        uses: Platane/snk@v3
-        id: snake-animation
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            ./assets/github-contribution-grid-snake.gif
-            ./assets/github-contribution-grid-snake.svg
-            ./assets/github-contribution-grid-snake-dark.svg?palette=github-dark
-
-      - name: Push to GitHub
-        uses: EndBug/add-and-commit@v9
-        with:
-          message: 'Generate Github contribution heatmap animation'
+      # - name: Generate Snake
+      #   uses: Platane/snk@v3
+      #   id: snake-animation
+      #   with:
+      #     github_user_name: ${{ github.repository_owner }}
+      #     outputs: |
+      #       ./assets/github-contribution-grid-snake.gif
+      #       ./assets/github-contribution-grid-snake.svg
+      #       ./assets/github-contribution-grid-snake-dark.svg?palette=github-dark
