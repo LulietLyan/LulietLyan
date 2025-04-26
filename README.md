@@ -8,7 +8,7 @@
 alt="github follow"/>
 <img src="https://komarev.com/ghpvc/?username=lulietlyan&label=Profile%20views&color=21907b&style=for-the-badge" alt="lulietlyan" /> 
 <a href="mailto:lulietlyan@gmail.com" target="_blank">
-<img src="https://img.shields.io/badge/gmail:  lulietlyan-%23EA4335.svg?style=for-the-badge&logo=gmail&logoColor=white"t=mail" /></a>
+<img src="https://img.shields.io/badge/gmail:lulietlyan-%23EA4335.svg?style=for-the-badge&logo=gmail&logoColor=white"t=mail" /></a>
 </p>
 
 <p align="center"> 
