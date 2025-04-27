@@ -74,7 +74,7 @@ alt="github follow"/>
 <img src="./image/line-neon.gif" width=100%><br><br>
 
 
-<p><img align="center" src="/github-metrics.svg" alt="Metrics" width="800" /></p>
+<p align="center"><img align="center" src="/github-metrics.svg" alt="Metrics" width=100% /></p>
 
 
 <img src="./image/line-neon.gif" width=100%><br><br>
