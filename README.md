@@ -17,7 +17,7 @@
 alt="github follow"/>
 <img src="https://komarev.com/ghpvc/?username=lulietlyan&label=Profile%20views&color=21907b&style=for-the-badge" alt="lulietlyan" /> 
 <a href="mailto:lulietlyan@gmail.com" target="_blank">
-<img src="https://img.shields.io/badge/gmail:lulietlyan-%23EA4335.svg?style=for-the-badge&logo=gmail&logoColor=white"t=mail" /></a>
+<img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=A084DC&logoColor=white&labelColor=&style=for-the-badge"/></a>
 </p>
 
 <p align="center"> 
@@ -56,13 +56,13 @@ alt="github follow"/>
 <table align="center">
 <tr border="none">
 <td width="50%" align="center">
-  <img  align="center"  src="https://github-readme-stats.vercel.app/api?username=LulietLyan&theme=radical&show_icons=true&count_private=true&title_color=7A7ADB&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" />
+  <img  align="center"  src="https://github-readme-stats.vercel.app/api?username=LulietLyan&theme=radical&show_icons=true&count_private=true&title_color=7A7ADB&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,5C02C4" />
   <br></br>
-  <a href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats.herokuapp.com?user=LulietLyan&theme=transparent&background=45%2C000000%2C130F40&border=FFFFFF&fire=7A7ADB&currStreakNum=D3D3D3&sideLabels=D3D3D3&stroke=D3D3D3&sideNums=D3D3D3&ring=2234AE&currStreakLabel=D3D3D3&dates=D3D3D3&excludeDaysLabel=D3D3D3" alt="GitHub Streak" /></a>
+  <a href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats.herokuapp.com?user=LulietLyan&theme=transparent&background=0%2C000000%2C5C02C4&border=FFFFFF&fire=7A7ADB&currStreakNum=D3D3D3&sideLabels=D3D3D3&stroke=D3D3D3&sideNums=D3D3D3&ring=2234AE&currStreakLabel=D3D3D3&dates=D3D3D3&excludeDaysLabel=D3D3D3" alt="GitHub Streak" /></a>
 </td>
 
 <td width="50%" align="center">
-  <img  align="center"  src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=LulietLyan&theme=radical&hide_border=false&no-bg=true&no-frame=true&langs_count=10&title_color=7A7ADB&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40"/>
+  <img  align="center"  src="https://github-readme-stats.anuraghazra1.vercel.app/api/top-langs/?username=LulietLyan&theme=radical&hide_border=false&no-bg=true&no-frame=true&langs_count=10&title_color=7A7ADB&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,5C02C4"/>
   </td>
 </tr>
 </table>
