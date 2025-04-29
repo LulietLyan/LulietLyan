@@ -15,11 +15,14 @@
 <img src="./image/line-neon.gif" width=100%><br>
 
 <p align="center"> 
-<img src="https://img.shields.io/github/followers/LulietLyan?label=Followers&style=for-the-badge&color=purple"
-alt="github follow"/>
-<img src="https://komarev.com/ghpvc/?username=lulietlyan&label=Profile%20views&color=21907b&style=for-the-badge" alt="lulietlyan" /> 
-<a href="mailto:lulietlyan@gmail.com" target="_blank">
-<img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=A084DC&logoColor=white&labelColor=&style=for-the-badge"/></a>
+  <img src="https://img.shields.io/github/followers/LulietLyan?label=Followers&style=for-the-badge&color=purple"
+  alt="github follow"/>
+  <img src="https://komarev.com/ghpvc/?username=lulietlyan&label=Profile%20views&color=21907b&style=for-the-badge" alt="lulietlyan" /> 
+  <a href="mailto:lulietlyan@gmail.com" target="_blank"><img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=A084DC&logoColor=white&labelColor=&style=for-the-badge"/></a>
+  <img src="https://img.shields.io/badge/Contributions-Welcome-%23028745?style=for-the-badge&labelColor=%23b08f42"
+  alt="contribution"/>
+  <img src="https://img.shields.io/badge/Star-IfYouLike-%23067897?style=for-the-badge&labelColor=%23879078"
+  alt="star"/>
 </p>
 
 <p align="center"> 
