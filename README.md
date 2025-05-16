@@ -8,7 +8,7 @@
 
 <div id="user-content-toc">
   <ul align="center">
-    <summary><h2 style="display: inline-block"><b>𝙵𝚛𝚘𝚖 🇨🇳, 𝚂𝚞𝚗 𝚈𝚊𝚝-𝚂𝚎𝚗 𝚄𝚗𝚒𝚟𝚎𝚛𝚜𝚒𝚝𝚢</b></h2></summary>
+    <summary><h2 style="display: inline-block"><b>𝙵𝚛𝚘𝚖 🇨🇳, 𝚂𝚞𝚗 𝚈𝚊𝚝-s𝚎𝚗 𝚄𝚗𝚒𝚟𝚎𝚛𝚜𝚒𝚝𝚢</b></h2></summary>
   </ul>
 </div>
 
