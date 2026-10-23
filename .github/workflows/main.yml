@@ -19,14 +19,14 @@ permissions:
   contents: write
 concurrency:
   group: profile-metrics-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 jobs:
   github-metrics:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
     - name: Generate the combined Metrics SVG
-      uses: lowlighter/metrics@latest
+      uses: lowlighter/metrics@v3.34
       with:
         token: ${{ secrets.METRICS }}
         committer_token: ${{ github.token }}
@@ -37,6 +37,7 @@ jobs:
         config_timezone: Asia/Shanghai
         config_display: large
         config_animations: 'yes'
+        debug: 'yes'
         config_order: base.header, achievements, base.activity+community, base.repositories, isocalendar, languages,
           topics, habits, activity, repositories, notable, followup, starlists, stars
         plugins_errors_fatal: 'no'
@@ -100,7 +101,7 @@ jobs:
         plugin_followup_sections: repositories, user
     - name: Generate the alternate detailed achievement display
       if: ${{ !cancelled() }}
-      uses: lowlighter/metrics@latest
+      uses: lowlighter/metrics@v3.34
       with:
         token: ${{ secrets.METRICS }}
         committer_token: ${{ github.token }}
@@ -111,6 +112,7 @@ jobs:
         config_timezone: Asia/Shanghai
         config_display: large
         config_animations: 'yes'
+        debug: 'yes'
         plugins_errors_fatal: 'yes'
         plugin_achievements: 'yes'
         plugin_achievements_display: detailed
