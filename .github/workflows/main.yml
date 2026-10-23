@@ -1,8 +1,6 @@
 # All panels use the native lowlighter/metrics GitHub Action.
 # Main SVG: profile, compact achievements, calendar, languages, topics, habits,
 # activity, projects, notable contributions, follow-up, star lists, and stars.
-# Set LEETCODE_COM_USERNAME to include the international LeetCode account
-# in the same main SVG. The upstream plugin does not support leetcode.cn.
 # Achievements has one display setting per render, so its detailed style
 # is the only Metrics panel kept as a separate SVG.
 name: Metrics
@@ -40,7 +38,7 @@ jobs:
         config_display: large
         config_animations: 'yes'
         config_order: base.header, achievements, base.activity+community, base.repositories, isocalendar, languages,
-          topics, habits, activity, repositories, notable, followup, starlists, stars, leetcode
+          topics, habits, activity, repositories, notable, followup, starlists, stars
         plugins_errors_fatal: 'no'
         plugin_lines: 'yes'
         plugin_lines_sections: base
@@ -100,11 +98,6 @@ jobs:
         plugin_notable_self: 'no'
         plugin_followup: 'yes'
         plugin_followup_sections: repositories, user
-        plugin_leetcode: ${{ vars.LEETCODE_COM_USERNAME != '' }}
-        plugin_leetcode_user: ${{ vars.LEETCODE_COM_USERNAME || 'lulietlyan' }}
-        plugin_leetcode_sections: solved, skills, recent
-        plugin_leetcode_limit_skills: '10'
-        plugin_leetcode_limit_recent: '5'
     - name: Generate the alternate detailed achievement display
       if: ${{ !cancelled() }}
       uses: lowlighter/metrics@latest

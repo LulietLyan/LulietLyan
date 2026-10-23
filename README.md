@@ -69,8 +69,4 @@
   </picture>
 </p>
 
-<p align="center">
-  <a href="https://leetcode.cn/u/jueming-liang/"><img src="https://img.shields.io/badge/LeetCode_CN-jueming--liang-FFA116?style=flat-square&logo=leetcode&logoColor=white" alt="LeetCode China profile: jueming-liang" /></a>
-</p>
-
 <img src="./image/line-neon.gif" width=100%><br>
