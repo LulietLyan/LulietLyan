@@ -25,6 +25,32 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
+    - name: Check out the upstream compatibility fixes
+      uses: actions/checkout@v4
+      with:
+        repository: lowlighter/metrics
+        ref: 1e49d0b8b932624dd7762147e35ccc137eda09f1
+        path: metrics-upstream
+        persist-credentials: false
+        sparse-checkout-cone-mode: false
+        sparse-checkout: |
+          /package.json
+          /source/plugins/achievements/list/users.mjs
+          /source/plugins/achievements/queries/achievements.graphql
+          /source/plugins/activity/index.mjs
+          /source/plugins/habits/index.mjs
+    - name: Prepare the official runtime with the upstream fixes
+      working-directory: metrics-upstream
+      run: |
+        cat > "$RUNNER_TEMP/metrics.Dockerfile" <<'DOCKERFILE'
+        FROM ghcr.io/lowlighter/metrics:v3.34
+        COPY source/plugins/achievements/list/users.mjs /metrics/source/plugins/achievements/list/users.mjs
+        COPY source/plugins/achievements/queries/achievements.graphql /metrics/source/plugins/achievements/queries/achievements.graphql
+        COPY source/plugins/activity/index.mjs /metrics/source/plugins/activity/index.mjs
+        COPY source/plugins/habits/index.mjs /metrics/source/plugins/habits/index.mjs
+        DOCKERFILE
+        METRICS_RUNTIME_VERSION=$(node -p 'require("./package.json").version')
+        docker build --file "$RUNNER_TEMP/metrics.Dockerfile" --tag "metrics:$METRICS_RUNTIME_VERSION" .
     - name: Generate the combined Metrics SVG
       timeout-minutes: 15
       # Upstream PR #1834 fixes Projects classic and missing PushEvent commits.
@@ -32,7 +58,7 @@ jobs:
       with:
         token: ${{ secrets.METRICS }}
         committer_token: ${{ github.token }}
-        # Build the pinned source so the fixes are included in the runtime.
+        # Use the prepared image with the pinned upstream fixes.
         use_prebuilt_image: 'no'
         user: LulietLyan
         filename: github-metrics.svg
