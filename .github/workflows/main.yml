@@ -1,83 +1,209 @@
-# Visit https://github.com/lowlighter/metrics#-documentation for full reference
+# Native plugin options: https://github.com/lowlighter/metrics
 name: Metrics
+
 on:
-  # Schedule updates (each hour)
-  schedule: [{ cron: "0 3 * * *" }]
-  # Lines below let you run workflow manually and on each commit
+  schedule:
+    # Twice daily: 11:17 and 23:17 in Asia/Shanghai.
+    - cron: "17 3,15 * * *"
   workflow_dispatch:
-  push: { branches: ["master", "main"] }
+  push:
+    branches: [main, master]
+    paths:
+      - README.md
+      - .github/workflows/main.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-metrics-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    timeout-minutes: 45
     steps:
-      - uses: lowlighter/metrics@latest
+      # Each step uses the upstream action, which generates and commits its SVG.
+      # A failed plugin leaves its previous SVG intact; other steps can continue.
+      - name: Achievements — compact display
+        if: ${{ !cancelled() }}
+        uses: lowlighter/metrics@latest
         with:
-          # Your GitHub token
-          # The following scopes are required:
-          #  - public_access (default scope)
-          # The following additional scopes may be required:
-          #  - read:org      (for organization related metrics)
-          #  - read:user     (for user related data)
-          #  - read:packages (for some packages related data)
-          #  - repo          (optional, if you want to include private repositories)
           token: ${{ secrets.METRICS }}
-
-          # Options
+          committer_token: ${{ github.token }}
           user: LulietLyan
+          filename: metrics.achievements.svg
+          template: classic
+          base: ""
+          config_timezone: Asia/Shanghai
+          config_display: large
+          config_animations: yes
+          plugins_errors_fatal: yes
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: C
+          plugin_achievements_limit: 12
+
+      - name: Profile, languages, and isometric calendar
+        if: ${{ !cancelled() }}
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS }}
+          committer_token: ${{ github.token }}
+          user: LulietLyan
+          filename: github-metrics.svg
           template: classic
           base: header, activity, community, repositories, metadata
-          config_display: large
           config_timezone: Asia/Shanghai
-          plugin_calendar: yes
-          plugin_calendar_limit: 1
+          config_display: large
+          config_animations: yes
+          config_order: base.header, base.activity+community, base.repositories, isocalendar, languages
+          plugins_errors_fatal: yes
+          plugin_lines: yes
+          plugin_lines_sections: base
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
           plugin_languages: yes
-          plugin_languages_analysis_timeout: 15
+          plugin_languages_indepth: yes
+          plugin_languages_sections: most-used, recently-used
+          plugin_languages_details: bytes-size, percentage
           plugin_languages_categories: markup, programming
+          plugin_languages_recent_categories: markup, programming
           plugin_languages_colors: github
           plugin_languages_limit: 8
-          plugin_languages_recent_categories: markup, programming
           plugin_languages_recent_days: 14
-          plugin_languages_recent_load: 300
-          plugin_languages_sections: most-used
-          plugin_languages_threshold: 0%
-          plugin_topics: yes
-          plugin_topics_limit: 15
-          plugin_topics_mode: starred
-          plugin_topics_sort: stars
+          plugin_languages_recent_load: 100
+          plugin_languages_analysis_timeout: 45
+          plugin_languages_analysis_timeout_repositories: 10
+          plugin_languages_skipped: LulietLyan/LulietLyan
 
-          # Starlists
+      - name: Starred topic icons and languages from star lists
+        if: ${{ !cancelled() }}
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS }}
+          committer_token: ${{ github.token }}
+          user: LulietLyan
+          filename: metrics.interests.svg
+          template: classic
+          base: ""
+          config_timezone: Asia/Shanghai
+          config_display: large
+          config_animations: yes
+          config_order: topics, starlists, stars
+          plugins_errors_fatal: yes
+          # Star topics at https://github.com/topics to populate the icon strip.
+          # Topics without an icon are omitted by the upstream icons mode.
+          plugin_topics: yes
+          plugin_topics_mode: icons
+          plugin_topics_limit: 15
+          plugin_topics_sort: stars
+          # These are existing lists on this account; the old "Awesome" filter
+          # did not match any of them. The empty "Exercises" list is omitted.
           plugin_starlists: yes
+          plugin_starlists_only: Guidance, Star my repositories
+          plugin_starlists_limit: 2
           plugin_starlists_languages: yes
           plugin_starlists_limit_languages: 8
-          plugin_starlists_limit_repositories: 0
-          plugin_starlists_only: Awesome
+          plugin_starlists_limit_repositories: 2
+          plugin_starlists_shuffle_repositories: no
+          plugin_stars: yes
+          plugin_stars_limit: 4
 
-          # Repositories
+      - name: Coding habits, smooth charts, and recent activity
+        if: ${{ !cancelled() }}
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS }}
+          committer_token: ${{ github.token }}
+          user: LulietLyan
+          filename: metrics.activity.svg
+          template: classic
+          base: ""
+          config_timezone: Asia/Shanghai
+          config_display: large
+          config_animations: yes
+          config_order: habits, activity
+          plugins_errors_fatal: yes
+          plugin_habits: yes
+          plugin_habits_from: 300
+          plugin_habits_days: 30
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: graph
+          plugin_habits_trim: no
+          plugin_habits_languages_limit: 6
+          plugin_activity: yes
+          plugin_activity_limit: 6
+          plugin_activity_load: 100
+          plugin_activity_days: 30
+          plugin_activity_visibility: public
+          plugin_activity_timestamps: yes
+          plugin_activity_filter: push, issue, pr, release, review, fork
+
+      - name: Featured projects, notable contributions, and follow-up
+        if: ${{ !cancelled() }}
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS }}
+          committer_token: ${{ github.token }}
+          user: LulietLyan
+          filename: metrics.projects.svg
+          template: classic
+          base: ""
+          config_timezone: Asia/Shanghai
+          config_display: large
+          config_animations: yes
+          config_order: repositories, notable, followup
+          plugins_errors_fatal: yes
           plugin_repositories: yes
-          plugin_repositories_pinned: 4
+          plugin_repositories_pinned: 6
+          plugin_notable: yes
+          plugin_notable_from: all
+          plugin_notable_types: commit, pull_request
+          plugin_notable_repositories: yes
+          plugin_notable_self: no
+          plugin_followup: yes
+          plugin_followup_sections: repositories, user
 
-          # License
-          plugin_licenses: yes
-          plugin_licenses_setup: bash -c '[[ -f package.json ]] && npm ci || true'
-          plugin_licenses_legal: no
-          plugin_licenses_ratio: yes
+      - name: Achievements — detailed display
+        if: ${{ !cancelled() }}
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS }}
+          committer_token: ${{ github.token }}
+          user: LulietLyan
+          filename: metrics.achievements.detailed.svg
+          template: classic
+          base: ""
+          config_timezone: Asia/Shanghai
+          config_display: large
+          config_animations: yes
+          plugins_errors_fatal: yes
+          plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_threshold: C
+          plugin_achievements_limit: 8
 
-          # skyline
-          # plugin_skyline: yes
-          # plugin_skyline_year: 2025
-          # plugin_skyline_frames: 6
-          # plugin_skyline_quality: 1
-
-      # - name: Generate Snake
-      #   uses: Platane/snk@v3
-      #   id: snake-animation
-      #   with:
-      #     github_user_name: ${{ github.repository_owner }}
-      #     outputs: |
-      #       ./assets/github-contribution-grid-snake.gif
-      #       ./assets/github-contribution-grid-snake.svg
-      #       ./assets/github-contribution-grid-snake-dark.svg?palette=github-dark
+      # The native LeetCode plugin supports leetcode.com only, not leetcode.cn.
+      # The user's China profile is https://leetcode.cn/u/jueming-liang/ .
+      # If an international account is added later, set the repository variable
+      # LEETCODE_COM_USERNAME. Then embed metrics.leetcode.svg in README.md.
+      - name: LeetCode international — optional native integration
+        if: ${{ !cancelled() && vars.LEETCODE_COM_USERNAME != '' }}
+        uses: lowlighter/metrics@latest
+        with:
+          token: NOT_NEEDED
+          committer_token: ${{ github.token }}
+          user: LulietLyan
+          filename: metrics.leetcode.svg
+          base: ""
+          config_timezone: Asia/Shanghai
+          config_display: large
+          plugins_errors_fatal: yes
+          plugin_leetcode: yes
+          plugin_leetcode_user: ${{ vars.LEETCODE_COM_USERNAME }}
+          plugin_leetcode_sections: solved, skills, recent
+          plugin_leetcode_limit_skills: 10
+          plugin_leetcode_limit_recent: 5
