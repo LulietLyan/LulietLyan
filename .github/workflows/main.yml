@@ -64,6 +64,8 @@ jobs:
         base: header, activity, community, repositories, metadata
         config_timezone: Asia/Shanghai
         config_display: large
+        # Avoid the default 11% padding, which grows too large on a long profile.
+        config_padding: 0, 24
         config_animations: 'yes'
         # Official styling hook: use the full canvas and keep the calendar compact.
         extras_css: |
