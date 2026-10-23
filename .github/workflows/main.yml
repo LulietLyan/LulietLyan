@@ -1,8 +1,6 @@
 # All panels use the native lowlighter/metrics GitHub Action.
 # Main SVG: profile, compact achievements, calendar, languages, topics, habits,
 # activity, projects, notable contributions, follow-up, star lists, and stars.
-# Achievements has one display setting per render, so its detailed style
-# is the only Metrics panel kept as a separate SVG.
 name: Metrics
 'on':
   schedule:
@@ -67,6 +65,41 @@ jobs:
         config_timezone: Asia/Shanghai
         config_display: large
         config_animations: 'yes'
+        # Official styling hook: use the full canvas and keep the calendar compact.
+        extras_css: |
+          svg.large .starlist {
+            box-sizing: border-box;
+            width: 100%;
+            padding-right: 28px;
+          }
+          .starlist .repositories {
+            display: flex;
+            flex-wrap: wrap;
+          }
+          .starlist .repository {
+            min-width: 0;
+          }
+          .starlist .repository .name,
+          .starlist .repository .description {
+            width: calc(100% - 38px);
+          }
+          .starlist .repository .name span:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+          /* The upstream scraper reads list prefixes as counts (0, 1, 2). */
+          .starlist > .count,
+          .starlist .language.details small > div:first-child {
+            display: none;
+          }
+          /* Target the native isometric calendar, keeping its full-year viewBox. */
+          section > svg[version="1.1"] {
+            display: block;
+            width: 72%;
+            height: auto;
+            margin: -60px auto 0 !important;
+          }
         debug: 'yes'
         retries: '2'
         retries_delay: '15'
@@ -126,25 +159,3 @@ jobs:
         plugin_notable_self: 'no'
         plugin_followup: 'yes'
         plugin_followup_sections: repositories, user
-    - name: Generate the alternate detailed achievement display
-      timeout-minutes: 5
-      uses: lowlighter/metrics@1e49d0b8b932624dd7762147e35ccc137eda09f1
-      with:
-        token: ${{ secrets.METRICS }}
-        committer_token: ${{ github.token }}
-        use_prebuilt_image: 'no'
-        user: LulietLyan
-        filename: metrics.achievements.detailed.svg
-        template: classic
-        base: ''
-        config_timezone: Asia/Shanghai
-        config_display: large
-        config_animations: 'yes'
-        debug: 'yes'
-        retries: '2'
-        retries_delay: '15'
-        plugins_errors_fatal: 'yes'
-        plugin_achievements: 'yes'
-        plugin_achievements_display: detailed
-        plugin_achievements_threshold: C
-        plugin_achievements_limit: '8'
